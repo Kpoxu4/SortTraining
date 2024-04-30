@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Numerics;
+using System.Runtime.CompilerServices;
 
 
 namespace Sort
@@ -64,11 +65,27 @@ namespace Sort
                 }
                 if (count == 0) break;
                 else start++;
-
             }
             return array;
         }
 
+        // сортировка вставками
+        public static T[] MakeSorting(T[] array)
+        {
+            for (int i = 1; i < array.Length; i++)
+            {
+                var item = array[i];
+                var j = i;
+                while (j > 0 && item.CompareTo(array[j - 1]) == -1)
+                {
+                    array[j] = array[j - 1];
+                    j--;
+                }
+                array[j] = item;
+            }
+
+            return array;
+        }
         private static void Swop( ref T item, ref T itemNext)
         {
             T helpItem = item;

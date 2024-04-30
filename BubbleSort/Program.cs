@@ -11,11 +11,16 @@ foreach (int i in ints) Console.Write(i + " ");
 
 // Сортировка пузырьком
 //var resultBubbleSorting = Sort<int>.BubbleSorting(ints);
+
 // Шейкерная сортировка
-var resultShakerSorting = Sort<int>.ShakerSorting(ints);
+//var resultShakerSorting = Sort<int>.ShakerSorting(ints);
+
+//сортировка вставками
+
+var resultMakeSorting = Sort<int>.MakeSorting(ints);
 
 Console.WriteLine();
 
-foreach (int i in resultShakerSorting) Console.Write(i + " ");
+foreach (int i in resultMakeSorting) Console.Write(i + " ");
 
 
